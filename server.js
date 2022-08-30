@@ -18,4 +18,24 @@ httpServer.listen(port,  () => {
 const io = socketio(httpServer);
 io.on('connection', (socket) => {
     console.log('User Connected ', socket.id);
+
+    socket.on('offer', data => {
+        console.log('Sending offer to: ', data.receiverId);
+        io.to(data.receiverId).emit('offer', data);
+    });
+
+    socket.on('answer', data => {
+        console.log('Sending answer to: ', data.receiverId);
+        io.to(data.receiverId).emit('answer', data);
+    });
+
+    socket.on('callerCandidate', data => {
+        io.to(data.receiverId).emit('callerCandidate', data.candidate);
+    });
+
+    socket.on('receiverCandidate', data => {
+        io.to(data.receiverId).emit('receiverCandidate', data.candidate);
+    })
 });
+
+
