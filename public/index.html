@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Initial Web RTC</title>
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Webrtc Training</h2>
+        <label id="connection-id">Your id is:</label>
+        <strong class="mb-2 ml-sm-2" id="userId"></strong>
+        <form class="">
+        <h5>Call a Mobile</h5>
+            <input type="text" name="mobileid" id="mobileid" class="form-control mb-2 mr-sm-2" placeholder="Enter Mobile"/>
+            <div class="action-btns">
+                <button type="button" id="start" class="btn btn-primary mr-sm-2">Start</button>
+                <button type="button" id="stop" class="btn btn-danger mr-sm-2">Stop</button>
+                <button type="button" id="mute" class="btn btn-info mr-sm-2">Mute</button>
+                <button type="button" id="unmute" class="btn btn-dark mr-sm-2">Un Mute</button>
+            </div>
+        </form>
+        
+        <div id="video-screens">
+            <div id="local-video-container" class="video">
+                <h3>Local video</h3>
+                <video id="localvideo" autoplay controls></video>
+            </div>
+            <div id="remote-video-container" class="video">
+                <h3>Remote Video</h3>
+                <video id="remotevideo" autoplay controls></video>
+            </div>
+        </div>
+    </div>
+    <script src="index.js" type="text/javascript"></script>
+</body>
+</html>

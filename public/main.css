@@ -1,0 +1,29 @@
+#video-screens {
+    margin: 20px auto;
+}
+
+#video-screens .video {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    width: 500px;
+    height: 400px;
+    margin: 0 10px 10px 0;
+}
+
+#video-screens div.video video {
+    width: 100%;
+    height: 100%;
+}
+
+
+.left
+{
+    width:100%;
+    text-align: left;
+}
+
+.right
+{
+    display: inline-block;
+}
